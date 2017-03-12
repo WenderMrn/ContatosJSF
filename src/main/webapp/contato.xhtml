@@ -7,16 +7,16 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:body>
-	<h:form style="margin:auto">
-		<h:panelGrid>
+	<h:form>
+		<h:panelGrid style="margin:auto">
 			<h1>Novo Contato</h1>
 			<h:outputLabel for="nome">Nome</h:outputLabel>
-			<h:inputText id="nome" value="#{contatosBean.contato.nome}" required="true"/>
+			<h:inputText id="nome" value="#{contatoBean.contato.nome}" required="true"/>
 			<h:outputLabel for="email">Email</h:outputLabel>
-			<h:inputText id="email" value="#{contatosBean.contato.email}" required="true"/>
+			<h:inputText id="email" value="#{contatoBean.contato.email}" required="true"/>
 			<h:outputLabel for="telefone">Telefone</h:outputLabel>
-			<h:inputText id="telefone" value="#{contatosBean.contato.telefone}" required="true"/>
-			<h:commandButton value="Adicionar" action="#{contatosBean.adicionar}"></h:commandButton>
+			<h:inputText id="telefone" value="#{contatoBean.contato.telefone}" required="true"/>
+			<h:commandButton value="Salvar" action="#{contatoBean.salvar}"></h:commandButton>
 		</h:panelGrid>	
 	</h:form>
 </h:body>

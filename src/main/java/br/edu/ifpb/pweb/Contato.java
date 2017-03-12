@@ -1,6 +1,8 @@
 package br.edu.ifpb.pweb;
 
 public class Contato {
+
+	private Long id;	
 	private String nome;
 	private String email;
 	private String telefone;
@@ -12,6 +14,14 @@ public class Contato {
 		this.email = email;
 		this.telefone = telefone;
 	};
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getNome() {
 		return nome;
@@ -36,5 +46,4 @@ public class Contato {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-
 }

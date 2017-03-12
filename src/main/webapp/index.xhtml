@@ -4,14 +4,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 <h:body>
 	<h:form>
 		<h:panelGrid style="margin-left:250px;margin-bottom:20px">
 			<h:commandButton value="Novo contato" action="contato"/>
 		</h:panelGrid>
-		<h:dataTable value="#{contatosBean.contatos}" var="contato" style="margin:auto" border="1" width="500">
+		<c:if test="#{empty agendaBean.contatos}">
+			<p style="text-align:center">Você não possui contatos cadastrados.</p>
+		</c:if>
+		<h:dataTable value="#{agendaBean.contatos}" var="contato" style="margin:auto" border="1" width="500" rendered="#{not empty agendaBean.contatos}">
 			<h:column>
 	    		<f:facet name="header">Nome</f:facet>
 	    		#{contato.nome}
@@ -23,6 +27,12 @@
 	    	<h:column>
 	    		<f:facet name="header">Telefone</f:facet>
 	    		#{contato.telefone}
+	    	</h:column>
+	    	<h:column>
+	    		<h:commandButton value="EXCLUIR" action="#{agendaBean.excluir(contato)}"></h:commandButton>
+	    	</h:column>
+	    	<h:column>
+	    		<h:commandButton value="EDITAR" action="#{contatoBean.init(contato)}"></h:commandButton>
 	    	</h:column>
 		</h:dataTable>
 	</h:form>
