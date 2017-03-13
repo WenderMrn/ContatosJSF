@@ -23,7 +23,7 @@ public class ContatoBean {
 	
 	public String init(Contato c){
 		this.contato = c;
-		return "contato";
+		return "contato?faces-redirect=true";
 	}
 
 	public AgendaBean getAgendabean() {
