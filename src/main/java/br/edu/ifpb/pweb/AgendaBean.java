@@ -19,6 +19,7 @@ public class AgendaBean {
 		adicionar(new Contato("Maria","maria@email.com","888-8888"));
 		adicionar(new Contato("Pedro","pedro@email.com","7777-7777"));
 	}
+	
 
 	public List<Contato> getContatos() {
 		return contatos;
