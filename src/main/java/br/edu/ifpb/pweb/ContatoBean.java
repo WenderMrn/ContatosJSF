@@ -50,6 +50,6 @@ public class ContatoBean {
 			this.agendabean.atualizar(this.contato);
 		
 		this.contato = new Contato();
-		return "index";
+		return "index?faces-redirect=true";
 	}
 }

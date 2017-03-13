@@ -10,7 +10,7 @@
 <h:body>
 	<h:form>
 		<h:panelGrid style="margin-left:250px;margin-bottom:20px">
-			<h:commandButton value="Novo contato" action="contato"/>
+			<h:commandButton value="Novo contato" action="contato?faces-redirect=true"/>
 		</h:panelGrid>
 		<c:if test="#{empty agendaBean.contatos}">
 			<p style="text-align:center">Você não possui contatos cadastrados.</p>

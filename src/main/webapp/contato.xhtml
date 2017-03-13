@@ -9,7 +9,7 @@
 <h:body>
 	<h:form>
 		<h:panelGrid style="margin:auto">
-			<h1>Novo Contato</h1>
+			<h1>#{empty contatoBean.contato.id?'Novo Contato':'Editar Contato'}</h1>
 			<h:outputLabel for="nome">Nome</h:outputLabel>
 			<h:inputText id="nome" value="#{contatoBean.contato.nome}" required="true"/>
 			<h:outputLabel for="email">Email</h:outputLabel>
